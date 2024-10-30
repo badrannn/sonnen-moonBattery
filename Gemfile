@@ -8,7 +8,10 @@ gem "rails", "~> 7.0.8", ">= 7.0.8.4"
 
 # Use sqlite3 as the database for Active Record
 gem "mysql2"
-
+gem "faker"
+gem "factory_bot_rails"
+gem "rspec-rails"
+gem "pry-byebug"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

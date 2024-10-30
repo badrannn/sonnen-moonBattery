@@ -6,7 +6,7 @@ class Battery < ApplicationRecord
   after_create :generate_configuration
   # validations
   validates :mac_address, presence: true, uniqueness: true,
-                          format: { with: /\A([0-9A-F]{2}[-:]){5}([0-9A-F]{2})\z/,
+                          format: { with: /\A([0-9A-F]{2}[-:]){5}([0-9A-F]{2})\z/i,
                                     message: "must be a valid MAC address" }
 
   private
