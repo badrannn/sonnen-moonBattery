@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :batteries, param: :serial_number, only: [:create] do
+    patch "ping", on: :member
+    resource :configurations, controller: "battery_configurations", only: [:show] do
+      patch :update, on: :member
+    end
+  end
 end
